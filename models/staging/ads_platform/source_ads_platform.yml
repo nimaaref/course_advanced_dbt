@@ -1,7 +1,9 @@
 sources:
   - name: ads_platform
+    description: "Data being generated from the ads_platform."
     schema: bingeflix
     database: raw
     tables:
       - name: daily_ads
         identifier: ads
+        description: "Daily campaign performance for ads."

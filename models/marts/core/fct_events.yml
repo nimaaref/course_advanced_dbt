@@ -1,0 +1,28 @@
+models:
+  - name: fct_events
+    description: "A fact table for the events that occur."
+    columns:
+      - name: session_id
+        data_type: varchar
+        description: "The session id assigned to the user for this session. "
+        data_tests:
+          - not_null
+
+      - name: created_at
+        data_type: timestamp_ntz
+        description: "The timestamp for when the session was created. "
+
+      - name: user_id
+        data_type: number
+        description: "The user id for the user."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: event_name
+        data_type: varchar
+        description: "The event name"
+
+      - name: event_id
+        data_type: number
+        description: "The id for the event."
