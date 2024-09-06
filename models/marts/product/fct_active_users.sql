@@ -19,7 +19,7 @@ date_spine AS (
         {{ ref('int_dates')}}
 ),
 
-final AS (
+pre_agg AS (
     SELECT
         {{ dbt_utils.generate_surrogate_key(['date_week', 'user_id']) }} AS surrogate_key,
         date_week,
@@ -29,6 +29,13 @@ final AS (
         date_spine
         LEFT JOIN events ON date_spine.calendar_date = events.created_date
     GROUP BY ALL
+),
+
+final AS (
+    SELECT *,
+    {{ rolling_agg_x_periods('login_count', 'user_id', 'avg', 'date_week', 7) }}
+    FROM pre_agg
 )
+
 
 SELECT * FROM final

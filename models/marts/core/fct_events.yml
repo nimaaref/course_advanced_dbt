@@ -16,7 +16,6 @@ models:
         data_type: number
         description: '{{ doc("bingeflix_column_user_id") }}'
         data_tests:
-          - unique
           - not_null
 
       - name: event_name
@@ -26,3 +25,6 @@ models:
       - name: event_id
         data_type: number
         description: "The id for the event."
+        data_tests:
+          - not_null
+          - unique

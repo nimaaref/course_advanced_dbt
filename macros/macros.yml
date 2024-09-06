@@ -1,0 +1,32 @@
+version: 2
+
+macros:
+  - name: rolling_agg_x_periods
+    description: |
+      A macro that calculates a rolling aggregation (such as average, sum, min, max) over the last N periods.
+      It uses a window function in SQL to partition data, order rows within each partition, and apply a rolling aggregation.
+    arguments:
+      - name: aggregation
+        description: |
+          The SQL aggregation function to apply (e.g., `avg`, `sum`, `min`, `max`).
+          Ensure that the aggregation is a valid SQL function supported by your database (e.g., BigQuery, Postgres).
+      - name: column_name
+        description: The name of the column on which the rolling aggregation will be calculated.
+      - name: partition_by
+        description: The column used to partition the data (e.g., user_id, product_id).
+      - name: order_by
+        description: |
+          The column used to order the rows within each partition. This is typically a timestamp or date column.
+          Defaults to 'created_at'.
+      - name: x_periods
+        description: The number of periods to include in the rolling aggregation.
+  - name: handle_end_month
+    description: |
+      This macro handles the logic for calculating the subscription `end_month` based on certain conditions:
+      - If the subscription `start_month` equals the `end_month`, the `end_month` is extended by one month because the subscription remains active until the end of the first month.
+      - If the subscription `end_month` is NULL (indicating an ongoing subscription), the `end_month` is set to one month from the current date.
+    arguments:
+      - name: start_month
+        description: The starting month of the subscription. This value is compared to the `end_month`.
+      - name: end_month
+        description: The ending month of the subscription. This value is checked for `NULL` or equal to `start_month` and adjusted accordingly.

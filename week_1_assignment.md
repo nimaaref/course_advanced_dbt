@@ -5,7 +5,7 @@
 | -------------------------------- | ------------ | ----------------- | -------------------------- | ------------------------------- | ---------------------------------- | --- |
 | 2024-08-30 15:36:36.952000-07:00 |           12 |                11 |                      91.67 |                                 |                                100 | ... |
 
-**Resolution:**  
+**Resolution:**
 Added the required doucmentation to fct_events
 
 ---
@@ -15,7 +15,7 @@ Added the required doucmentation to fct_events
 | ------------- | ---------- |
 | fct_events    | marts      |
 
-**Resolution:**  
+**Resolution:**
 Added the yml file required.
 
 ---
@@ -25,7 +25,7 @@ Added the yml file required.
 | ------------- | ------ | ---------- | -------------------- |
 | mrr           | mrr_   | marts      | dim_, fct_           |
 
-**Resolution:**  
+**Resolution:**
 Added the fct prefix
 
 ---
@@ -35,7 +35,7 @@ Added the fct prefix
 | ---------------------- |
 | ads_platform.daily_ads |
 
-**Resolution:**  
+**Resolution:**
 Added the required descriptions
 ---
 
@@ -44,7 +44,7 @@ Added the required descriptions
 | ------------ |
 | ads_platform |
 
-**Resolution:**  
+**Resolution:**
 Added the required descriptions
 
 ---
@@ -54,8 +54,8 @@ Added the required descriptions
 | -------------------------------- | ------------ | ----------- | ------------- | ----------------- | ---------------------- | --- |
 | 2024-08-30 15:36:38.253000-07:00 |           12 |          75 |            11 |             91.67 |                        | ... |
 
-**Resolution:**  
-Added the necessary test. 
+**Resolution:**
+Added the necessary test.
 
 ---
 
@@ -64,7 +64,7 @@ Added the necessary test.
 | ------------- | ------------- | ---------- | --------------------- | ------------------------ |
 | fct_events    | model         | marts      |                 False |                        0 |
 
-**Resolution:**  
+**Resolution:**
 Added a unique test on user_id.
 
 ---
@@ -75,7 +75,7 @@ Added a unique test on user_id.
 | --------------------- | ----------------- | ----------------------------------------------------------------- |
 | stg_bingeflix__events | staging           | fct_active_users, fct_events, int_sessions_pivoted_to_event_names |
 
-**Resolution:**  
+**Resolution:**
 Added as an exception.
 
 ---
