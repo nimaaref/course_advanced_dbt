@@ -5,8 +5,8 @@ models:
       - name: subscription_plan_id
         description: The unique identifier of the subscription plan.
         data_tests:
-          - not_null
           - unique
+          - not_null
           - accepted_values:
               values: [1, 2, 3]
 

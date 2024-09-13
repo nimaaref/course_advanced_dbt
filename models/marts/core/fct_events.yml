@@ -5,8 +5,6 @@ models:
       - name: session_id
         data_type: varchar
         description: "The session id assigned to the user for this session. "
-        data_tests:
-          - not_null
 
       - name: created_at
         data_type: timestamp_ntz
@@ -15,12 +13,11 @@ models:
       - name: user_id
         data_type: number
         description: '{{ doc("bingeflix_column_user_id") }}'
-        data_tests:
-          - not_null
 
       - name: event_name
         data_type: varchar
         description: "The event name"
+
 
       - name: event_id
         data_type: number

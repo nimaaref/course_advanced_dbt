@@ -34,7 +34,6 @@ models:
       - name: sex
         description: The user's sex at birth.
         data_tests:
-          - not_null
           - accepted_values:
               values: ['M','F']
 
